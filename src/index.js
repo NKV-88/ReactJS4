@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-
-ReactDom.render ( <div></div>, document.getElementById('root'));
-
-
-
+import LifeCycleUnmount from './app/components/LifeCycleUnmount';
+//import LifeCycleUnmount from './app/components/LifeCycleUnmount';
+//import LifeCycleUnmount from './app/components/LifeCycleMount';
 
 
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            display: true
+        }   
+    }
+
+    render() {
+        return (
+            <div>
+                {this.state.display ? <LifeCycleUnmount />: null}
+                <button onClick={() => {
+                    this.setState({ display: false })
+                }}>Демонтировать компонент</button>
+            </div>
+        )
+    }
+}
+
+
+ReactDom.render ( <App />, document.getElementById('root'));
 
 
 

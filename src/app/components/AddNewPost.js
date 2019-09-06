@@ -6,7 +6,7 @@ export default class AddNewPost extends Component {
     super(props);
     this.state = {
       title: '',
-      post: '',
+      anyPost: '',
       author: '',
       date: '',
       display: false,
@@ -23,7 +23,7 @@ export default class AddNewPost extends Component {
   
   handleSubmit(event) {
     event.preventDefault();
-    if ( this.state.title.length && this.state.post.length && this.state.author.length && this.state.date.length) {
+    if ( this.state.title.length && this.state.anyPost.length && this.state.author.length && this.state.date.length) {
       const { display, ...post } = this.state;
       this.props.addPost(post);
     } else {
@@ -39,15 +39,15 @@ export default class AddNewPost extends Component {
             
             <p >Add new post</p>
             
-            <input type="text" name="userName" value={ this.state.author } onChange={ this.handleChange }
+            <input type="text" name="author" value={ this.state.author } onChange={ this.handleChange }
                     placeholder="author:"/>
             
             <textarea name="title" value={ this.state.title } onChange={ this.handleChange }
                        placeholder="Post title:"/>
             
-            <textarea name="body" value={ this.state.post } onChange={ this.handleChange }
+            <textarea name="anyPost" value={ this.state.anyPost } onChange={ this.handleChange }
                      placeholder="Post content:"/>
-                     
+
             <textarea name="date" value={ this.state.date } onChange={ this.handleChange }
                      placeholder="date:"/>
             

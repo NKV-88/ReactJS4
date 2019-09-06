@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/Modal.css'
 
 export default class WelcomeModal extends Component {
     constructor (props){
@@ -27,7 +28,7 @@ export default class WelcomeModal extends Component {
 
     componentDidMount() {
         this.setState({
-            modal: true
+            modal: true,
         })
     }
 }

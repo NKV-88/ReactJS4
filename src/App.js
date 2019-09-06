@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 import Blog from './app/components/Blog';
 import WelcomeModal from './app/components/WelcomeModal';
-
 
 
 
@@ -41,15 +39,18 @@ export default class App extends Component {
                 }
             ]
         }
+        this.addPost = this.addPost.bind(this);
     }
-    
+
+    addPost(post) {
+        this.setState({posts: this.state.posts.concat(post)})
+    }
 
     render() {
-        return (
-            <div>
-                <Blog {this.state.post}/>
-            </div>
-        );
+        return  <div>
+        <WelcomeModal />
+        <Blog posts={ this.state.posts } addPost={this.addPost}/>
+      </div> ;
     }
 }
 

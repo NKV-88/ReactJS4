@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Blog from './app/components/Blog';
 import WelcomeModal from './app/components/WelcomeModal';

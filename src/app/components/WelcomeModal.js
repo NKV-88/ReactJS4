@@ -16,7 +16,7 @@ export default class WelcomeModal extends Component {
                 <div>
                     <h3>Welcome!</h3>
                     <p>I am Modal</p>
-                    <button onclick={() => this.setState({modal:false})}>
+                    <button onClick={() => this.setState({modal:false})}>
                         Close
                     </button>
                 </div>
